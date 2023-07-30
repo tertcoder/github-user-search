@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 
 <head>
   <meta charset="UTF-8">
@@ -13,8 +13,103 @@
   <script src="app.js" defer></script>
 </head>
 
-<body class="">
+<body class="w-full font-sans dark:text-text-dm text-text-lm dark:bg-bg-dm bg-bg-lm">
+  <div class="md:max-w-[700px] space-y-8 lg:max-w-[900px] my-10 sm:mx-auto">
+    <header class="flex items-center justify-between px-6 py-3">
+      <div>
+        <span class="text-2xl font-bold">DevFinder</span>
+      </div>
+      <button class="relative group" id="darkMode">
+        <img src="./assets/icon-sun.svg" alt="DarkMode" id="darkModeIMG">
+        <span
+          class="absolute py-0.5 px-1 text-[10px] md:text-[7px] top-0 right-6 font-bold rounded-lg opacity-0 group-hover:opacity-100 bg-bg-content-dm dark:bg-bg-content-lm dark:text-text-lm text-text-dm"
+          id="indicator">Light</span>
+      </button>
+    </header>
+    <section class="space-y-6">
+      <div
+        class="p-6 mx-6 md:p-3 rounded-xl search-container shadow-shadow-simple dark:bg-bg-content-dm bg-bg-content-lm dark:shadow-shadow-xl-dark">
+        <div class="relative flex flex-col items-center justify-between md:flex-row">
+          <label for="search-input" class="absolute top-0 md:-translate-y-1/2 md:top-5 left-1">
+            <img src="./assets/icon-search.svg" class="w-[20px] h-[20px]" alt='search icon'>
+          </label>
+          <input type="text" name="search-input" id="search-input"
+            class="self-stretch flex-1 px-8 pr-6 outline-none placeholder:text-text-lm dark:placeholder:text-text-dm bg-inherit"
+            placeholder="Search Github Username...">
+          <button type="submit"
+            class="self-stretch px-6 py-3 mt-6 text-base font-bold md:mt-0 text-text-dm rounded-xl bg-btn-simple hover:bg-btn-hover active:scale-95">Search</button>
+        </div>
+      </div>
+      <div id=" userProfile-Container"
+        class="p-6 mx-6 md:p-10 rounded-xl shadow-shadow-simple dark:bg-bg-content-dm bg-bg-content-lm dark:shadow-shadow-xl-dark">
+        <div>
+          <!-- User principal -->
+          <div id="profile-info"
+            class="flex flex-col items-center space-y-4 text-center sm:space-y-0 sm:flex-row sm:text-left">
+            <img id="profile-img" class="w-40 rounded-full sm:w-32 md:w-44"
+              src="https://avatars.githubusercontent.com/u/82041184?v=4">
+            <div class="flex-1 gap-4 space-y-4 sm:ml-8 md:space-y-0 md:justify-between md:flex">
+              <div>
+                <div id="user-fullname" class="text-xl font-bold text-text-alt-lm dark:text-text-alt-dm">Bon Tertius
+                  Tuyishimire
+                </div>
+                <a href="https://github.com/tertcoder" target="_blank" id="user-username"
+                  class="text-btn-simple">@tertcoder</a>
+              </div>
+              <div class="self-start md:text-right">
+                <span>Joined</span>
+                <span id="user-joined">06 April 2021</span>
+              </div>
+            </div>
 
+          </div>
+          <!-- User Biography -->
+          <div id="profile-bio" class="text-center mt-6 md:mt-0 sm:text-left md:ml-[205px] md:-translate-y-4">
+            <span class="block font-bold opacity-25 cursor-pointer">#Bio</span>
+            <span id="user-bio" class="opacity-75">
+              Young Burundian Coder 😎 | Web Developer--JavaScript 🧐| Web Designer--SCSS , TailwindCSS
+              |UI/UX😋😀\r\n💻working with 👨‍💻 @Toussaint-Coder @liberatricebaizer
+            </span>
+          </div>
+          <!-- User Stats -->
+          <div id=" profile-stats"
+            class=" mt-10 md:ml-[205px] md:-translate-y-4 dark:bg-bg-dm rounded-xl bg-bg-lm py-6 px-6 grid grid-cols-1  md:grid-cols-3 divide-double divide-y-2 md:divide-y-0 md:divide-x-2">
+            <div class="flex items-center justify-between pb-4 md:pb-0 md:pr-4">
+              <span>Repo</span>
+              <span class="text-2xl font-bold dark:text-text-alt-dm text-text-alt-lm" id="user-repo">45</span>
+            </div>
+            <div class="flex items-center justify-between py-4 md:py-0 md:px-4">
+              <span>Followers</span>
+              <span class="text-2xl font-bold dark:text-text-alt-dm text-text-alt-lm" id="user-follower">17</span>
+            </div>
+            <div class="flex items-center justify-between pt-4 md:pt-0 md:pl-4">
+              <span>Following</span>
+              <span class="text-2xl font-bold dark:text-text-alt-dm text-text-alt-lm" id="user-following">32</span>
+            </div>
+          </div>
+          <!-- Users Socials -->
+          <div id="profile-footer" class="mt-10 md:ml-[205px] md:-translate-y-4 grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="flex space-x-6 ">
+              <img src="./assets/icon-location.svg">
+              <span id="user-location">Bujumbura, Burundi</span>
+            </div>
+            <div class="flex space-x-6 opacity-50">
+              <img src="./assets/icon-website.svg">
+              <span id="user-page" class="">Not available</span>
+            </div>
+            <div class="flex space-x-6 ">
+              <img src="./assets/icon-twitter.svg">
+              <span id="user-twitter">bon_tertius</span>
+            </div>
+            <div class="flex space-x-6 opacity-50">
+              <img src="./assets/icon-company.svg">
+              <span id="user-company" class="">Not available</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
 </body>
 
 </html>
