@@ -61,14 +61,20 @@
                   alt="search icon"
                 />
               </label>
-
-              <input
-                type="text"
-                name="search-input"
-                id="search-input"
-                class="self-stretch w-full flex-1 px-8 pr-6 outline-none placeholder:text-text-lm dark:placeholder:text-text-dm bg-inherit"
-                placeholder="Search Github Username..."
-              />
+              <div class="relative w-full">
+                <input
+                  type="text"
+                  name="search-input"
+                  id="search-input"
+                  class="self-stretch w-full flex-1 px-8 pr-6 outline-none placeholder:text-text-lm dark:placeholder:text-text-dm bg-inherit"
+                  placeholder="Search Github Username..."
+                />
+                <img
+                  src="./assets/icon-erase.svg"
+                  id="erase"
+                  class="hidden absolute top-1 right-4"
+                />
+              </div>
               <span
                 id="searchEmpty"
                 class="block error w-full text-sm absolute text-red-500 translate-y-6 left-0"

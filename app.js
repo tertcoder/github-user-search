@@ -7,6 +7,7 @@ const searchBtn = getEl("search-submit");
 const searchEmpty = getEl("searchEmpty");
 const loader = getEl("loader");
 const profileContainer = getEl("profile-container");
+const eraseIcon = getEl("erase");
 
 const profileImage = getEl("profile-img");
 const userFullName = getEl("user-fullname");
@@ -56,7 +57,7 @@ const sendRequestedSearch = (api) => {
   console.log(searchQuery);
 };
 const clearSearchError = () => {
-  searchInput.addEventListener("keyup", () => (searchEmpty.textContent = ""));
+  searchInput.addEventListener("keydown", () => (searchEmpty.textContent = ""));
 };
 const getSearchValue = (e) => {
   e.preventDefault();
@@ -68,6 +69,20 @@ searchInput.addEventListener("keydown", (e) => {
   if (e.key === "Enter") {
     sendRequestedSearch(API_URL);
   }
+});
+
+const toggleErase = () =>
+  searchInput.value
+    ? eraseIcon.classList.remove("hidden")
+    : eraseIcon.classList.add("hidden");
+searchInput.addEventListener("keyup", () => {
+  eraseIcon.classList.remove("hidden");
+  toggleErase();
+});
+
+eraseIcon.addEventListener("click", () => {
+  searchInput.value = "";
+  toggleErase();
 });
 
 /**
