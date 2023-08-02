@@ -106,7 +106,7 @@ function renderDataToUI(data) {
   profileImage.src = `${data.avatar_url}`;
   userFullName.textContent = `${data.name}`;
   userName.textContent = `@${data.login}`;
-  userName.getAttribute("href", `${data.html_url}`);
+  userName.setAttribute("href", `${data.html_url}`);
   userBio.textContent = `${data.bio || "This profile has no bio"}`;
   userRepo.textContent = `${data.public_repos}`;
   userFollower.textContent = `${data.followers}`;
