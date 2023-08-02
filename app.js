@@ -119,7 +119,7 @@ function renderDataToUI(data) {
   }
 
   profileImage.src = `${data.avatar_url}`;
-  userFullName.textContent = `${data.name}`;
+  userFullName.textContent = checkingNull(data.name, userFullName);
   userName.textContent = `@${data.login}`;
   userName.setAttribute("href", `${data.html_url}`);
   userBio.textContent = `${data.bio || "This profile has no bio"}`;
