@@ -53,27 +53,31 @@
           <div
             class="relative flex flex-col items-center justify-between md:flex-row"
           >
-            <label
-              for="search-input"
-              class="absolute top-0 md:-translate-y-1/2 md:top-5 left-1"
-            >
-              <img
-                src="./assets/icon-search.svg"
-                class="w-[20px] h-[20px]"
-                alt="search icon"
-              />
-            </label>
+            <div class="relative w-full flex items-center">
+              <label for="search-input" class="absolute top-0 left-1">
+                <img
+                  src="./assets/icon-search.svg"
+                  class="w-[20px] h-[20px]"
+                  alt="search icon"
+                />
+              </label>
 
-            <input
-              type="text"
-              name="search-input"
-              id="search-input"
-              class="self-stretch flex-1 px-8 pr-6 outline-none placeholder:text-text-lm dark:placeholder:text-text-dm bg-inherit"
-              placeholder="Search Github Username..."
-            />
+              <input
+                type="text"
+                name="search-input"
+                id="search-input"
+                class="self-stretch w-full flex-1 px-8 pr-6 outline-none placeholder:text-text-lm dark:placeholder:text-text-dm bg-inherit"
+                placeholder="Search Github Username..."
+              />
+              <span
+                id="searchEmpty"
+                class="block error w-full text-sm absolute text-red-500 translate-y-6 left-0"
+              ></span>
+            </div>
             <button
               type="submit"
-              class="self-stretch px-6 py-3 mt-6 text-base font-bold md:mt-0 text-text-dm rounded-xl bg-btn-simple hover:bg-btn-hover active:scale-95"
+              class="self-stretch px-6 py-3 mt-10 text-base font-bold md:mt-0 text-text-dm rounded-xl bg-btn-simple hover:bg-btn-hover active:scale-95"
+              id="search-submit"
             >
               Search
             </button>
@@ -83,7 +87,8 @@
           id=" userProfile-Container"
           class="p-6 mx-6 md:p-10 rounded-xl shadow-shadow-simple dark:bg-bg-content-dm bg-bg-content-lm dark:shadow-shadow-xl-dark"
         >
-          <div>
+          <div id="loader" class="hidden text-xl font-bold">Loading...</div>
+          <div id="profile-container" class="">
             <!-- User principal -->
             <div
               id="profile-info"
@@ -178,7 +183,7 @@
               </div>
               <div class="flex items-center space-x-6 opacity-50">
                 <img src="./assets/icon-website.svg" />
-                <span id="user-page" class="">Not available</span>
+                <span id="user-page">Not available</span>
               </div>
               <div class="flex items-center space-x-6">
                 <img src="./assets/icon-twitter.svg" />
@@ -186,7 +191,7 @@
               </div>
               <div class="flex items-center space-x-6 opacity-50">
                 <img src="./assets/icon-company.svg" />
-                <span id="user-company" class="">Not available</span>
+                <span id="user-company">Not available</span>
               </div>
             </div>
           </div>
