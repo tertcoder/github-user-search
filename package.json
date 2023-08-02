@@ -8,5 +8,8 @@
     "watch": "tailwindcss -i ./input.css -o ./dist/style.css --watch"
   },
   "author": "Bon Tertius Tuyishimire",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.3.3"
+  }
 }

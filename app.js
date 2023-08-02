@@ -8,3 +8,5 @@ document.querySelector("#darkMode").addEventListener("click", () => {
     document.getElementById("darkModeIMG").src = "./assets/icon-moon.svg";
   }
 });
+
+const getEl = (id) => document.getElementById(id);
