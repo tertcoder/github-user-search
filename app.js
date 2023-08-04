@@ -54,7 +54,6 @@ const sendRequestedSearch = (api) => {
   loader.classList.remove("hidden");
   profileContainer.classList.add("hidden");
   getUserData(api, searchQuery);
-  console.log(searchQuery);
 };
 const clearSearchError = () => {
   searchInput.addEventListener("keydown", () => (searchEmpty.textContent = ""));
@@ -65,7 +64,6 @@ const getSearchValue = (e) => {
 };
 searchBtn.addEventListener("click", getSearchValue);
 searchInput.addEventListener("keydown", (e) => {
-  console.log(e.key);
   if (e.key === "Enter") {
     sendRequestedSearch(API_URL);
   }
